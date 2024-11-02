@@ -31,7 +31,7 @@ function Navbar() {
             <Link to={"/dashboard"}>Dashboard</Link>
           </ul>
         </div>
-        <Link to={"/"} className="btn btn-ghost text-xl">
+        <Link to={"/"} className="text-xl text-primary font-bold text-[28px]">
           COOK_BOOK
         </Link>
       </div>

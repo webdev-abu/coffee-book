@@ -6,6 +6,10 @@ export default {
       backgroundImage: {
         banner: "url('./assets/banner.jpg')",
       },
+      color: {
+        primary: "#3498db",
+        secondary: "#f1c40f",
+      },
     },
   },
   plugins: [require("daisyui")],

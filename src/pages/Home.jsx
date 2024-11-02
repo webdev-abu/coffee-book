@@ -1,8 +1,12 @@
 import React from "react";
 import Banner from "../components/Banner";
 import Heading from "../components/Heading";
+import { Outlet, useLoaderData } from "react-router-dom";
+import Categories from "../components/Categories";
 
 function Home() {
+  const categories = useLoaderData();
+  console.log(categories);
   return (
     <div>
       {/* Banner */}
@@ -15,7 +19,9 @@ function Home() {
         }
       ></Heading>
       {/* Category Tab Section Header */}
+      <Categories categories={categories}></Categories>
       {/* Dynamic Nested Component */}
+      <Outlet></Outlet>
     </div>
   );
 }
