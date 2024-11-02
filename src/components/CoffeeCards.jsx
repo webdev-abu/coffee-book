@@ -29,7 +29,7 @@ function CoffeeCards() {
       </div>
       <button
         onClick={() => navigate("/coffees")}
-        className="btn btn-warning my-6"
+        className="btn bg-[#ff41c7] text-white my-6"
       >
         View All
       </button>

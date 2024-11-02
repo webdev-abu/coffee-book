@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="navbar bg-base-100 ">
+    <div className="navbar z-50 fixed backdrop-blur-xl bg-white/30 py-5 px-12">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,20 +26,65 @@ function Navbar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <Link to={"/"}>Home</Link>
-            <Link to={"/coffees"}>Coffees</Link>
-            <Link to={"/dashboard"}>Dashboard</Link>
+            <NavLink
+              className={({ isActive }) =>
+                `font-bold text-[18px] text-primary ${
+                  isActive ? "text-secondary" : "hover:text-secondary"
+                }`
+              }
+              to={"/"}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `font-bold text-[18px] text-primary ${
+                  isActive ? "text-secondary" : "hover:text-secondary"
+                }`
+              }
+              to={"/coffees"}
+            >
+              Coffees
+            </NavLink>
+            <NavLink to={"/dashboard"}>Dashboard</NavLink>
           </ul>
         </div>
-        <Link to={"/"} className="text-xl text-primary font-bold text-[28px]">
+        <Link className="font-bold text-[18px] text-primary" to={"/"}>
           COOK_BOOK
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-8">
-          <Link to={"/"}>Home</Link>
-          <Link to={"/coffees"}>Coffees</Link>
-          <Link to={"/dashboard"}>Dashboard</Link>
+          <NavLink
+            className={({ isActive }) =>
+              `font-bold text-[18px] text-primary ${
+                isActive ? "text-secondary" : "hover:text-secondary"
+              }`
+            }
+            to={"/"}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `font-bold text-[18px] text-primary ${
+                isActive ? "text-secondary" : "hover:text-secondary"
+              }`
+            }
+            to={"/coffees"}
+          >
+            Coffees
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `font-bold text-[18px] text-primary ${
+                isActive ? "text-secondary" : "hover:text-secondary"
+              }`
+            }
+            to={"/dashboard"}
+          >
+            Dashboard
+          </NavLink>
         </ul>
       </div>
     </div>

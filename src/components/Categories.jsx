@@ -10,7 +10,11 @@ function Categories({ categories }) {
           key={category.category}
           to={`/category/${category.category}`}
           role="tab"
-          className={({ isActive }) => `tab ${isActive && "tab-active"}`} //isActive ? "tab-active" : ""
+          className={({ isActive }) =>
+            `tab font-bold text-[18px] text-primary ${
+              isActive ? "tab-active text-secondary" : "hover:text-secondary"
+            }`
+          } //isActive ? "tab-active" : ""
         >
           {" "}
           {category.category}
