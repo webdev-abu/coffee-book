@@ -50,7 +50,7 @@ function Navbar() {
           </ul>
         </div>
         <Link className="font-bold text-[18px] text-primary" to={"/"}>
-          COOK_BOOK
+          COFFEE BOOK
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">

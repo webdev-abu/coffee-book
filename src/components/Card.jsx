@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { FaRegTrashAlt } from "react-icons/fa";
 
-function Card({ coffee }) {
+function Card({ coffee,handleRemove }) {
+  const { pathname } = useLocation();
   const { name, image, category, origin, type, id, rating, popularity } =
     coffee || {};
   return (
@@ -23,6 +25,11 @@ function Card({ coffee }) {
           <p className="text-md ">Popularity : {popularity}</p>
         </div>
       </Link>
+      {pathname === `/dashboard` && (
+        <div onClick={()=>handleRemove(id)} className="absolute -top-5 -right-5 bg-warning p-3 rounded-full">
+          <FaRegTrashAlt className="text-white text-2xl" />
+        </div>
+      )}
     </div>
   );
 }

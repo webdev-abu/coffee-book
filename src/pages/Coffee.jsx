@@ -8,9 +8,14 @@ function Coffee() {
   const [coffees, setCoffees] = useState(coffeesData);
   const handleBySort = (sortBy) => {
     if (sortBy === "popularity") {
+      const sorted = [...coffeesData].sort(
+        (a, b) => b.popularity - a.popularity
+      );
+      setCoffees(sorted);
     } else if (sortBy === "rating") {
+      const sorted = [...coffeesData].sort((a, b) => b.rating - a.rating);
+      setCoffees(sorted);
     }
-    setCoffees(coffeesData.sort(sortBy));
   };
   return (
     <>
@@ -36,7 +41,7 @@ function Coffee() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-6 gap-6">
-        {coffeesData.map((coffee) => (
+        {coffees.map((coffee) => (
           <Card key={coffee.id} coffee={coffee}></Card>
         ))}
       </div>
